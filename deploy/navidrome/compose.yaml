@@ -1,0 +1,24 @@
+services:
+  navidrome:
+    image: ghcr.io/navidrome/navidrome:0.64.2
+    restart: unless-stopped
+    # 改成有权写入数据目录、读取音乐目录的 UID:GID。
+    user: "1000:1000"
+    ports:
+      - "4533:4533"
+    environment:
+      TZ: Asia/Shanghai
+    volumes:
+      # 预先创建数据目录，用于保存账号、数据库和缓存。
+      - type: bind
+        source: /REPLACE_WITH_Q4_PATH/docker/navidrome/data
+        target: /data
+        bind:
+          create_host_path: false
+      # 替换成 Q4 上已有音乐目录的绝对路径，只读挂载。
+      - type: bind
+        source: /REPLACE_WITH_Q4_PATH/Music
+        target: /music
+        read_only: true
+        bind:
+          create_host_path: false

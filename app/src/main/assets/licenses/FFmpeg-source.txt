@@ -1,0 +1,7 @@
+FFmpeg 6.1.4, LGPL 2.1 or later
+https://ffmpeg.org/releases/ffmpeg-6.1.4.tar.xz
+SHA-256 a231e3d5742c44b1cdaebfb98ad7b6200d12763e0b6db9e1e2c5891f2c083a18
+The MusicWall project includes build-android.sh and the Media3 JNI adapter.
+FFmpeg is dynamically linked and its three shared libraries can be rebuilt and replaced.
+Media3 FFmpeg JNI adapter and Java renderer, Apache License 2.0
+https://github.com/androidx/media/tree/1.11.1/libraries/decoder_ffmpeg
